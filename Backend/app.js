@@ -3,8 +3,12 @@ import cors from "cors";
 import dotenv from "dotenv";
 import { dbConnection } from "./database/dbConnection.js"
 import {errorMiddleware} from "./error/error.js"
+import reservationRouter from './routes/reservationRoute.js'
+
 const app = express();
 dotenv.config({ path: "./config/config.env" });
+
+
 
 //To connect backend to frontend
 app.use(
@@ -20,6 +24,8 @@ app.use(
 
 app.use(express.json()); //It parses the incoming request body, which typically contains data in JSON format, and makes that data available in the request.body property as a JSON object.
 app.use(express.urlencoded({ extended: true }));//In an Express application, when you receive data from a user (like a form submission), it often comes in different formats. The app.use(express.urlencoded({ extended: true })) is like a helper that helps the server understand and work with data that comes in a specific format.
+app.use('/api/v1/reservation', reservationRouter)
+
 
 dbConnection();
 
