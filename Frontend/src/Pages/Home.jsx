@@ -5,7 +5,7 @@ import Menu from "../Components/Menu";
 import WhoAreWe from "../Components/WhoAreWe";
 import Team from "../Components/Team";
 import Footer from "../Components/Footer";
-// import Reservation from "../Components/Reservation";
+import Reservation from "../Components/Reservation";
 function Home() {
   return (
     <>
@@ -15,7 +15,7 @@ function Home() {
       <Menu />
       <WhoAreWe />
       <Team />
-      {/* <Reservation /> */}
+      <Reservation />
       <Footer />
     </>
   );
